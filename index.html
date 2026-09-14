@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Tushar Saini — Backend & Systems Engineer</title>
 <meta name="description" content="Tushar Saini — M.Tech IIIT Allahabad. Backend, distributed systems and applied ML. Concurrency-correct booking systems, event-sourced ledgers, hybrid-search RAG." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tushar Saini — Backend &amp; Systems Engineer" />
+<meta property="og:description" content="Concurrency-correct booking backends, event-sourced ledgers, hybrid-search RAG, and an SHAP leakage audit for IIoT intrusion detection. Nine projects, with their limitations written down." />
+<meta property="og:url" content="https://tusharsaini.vercel.app/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Tushar Saini — Backend &amp; Systems Engineer" />
+<meta name="twitter:description" content="Nine projects, with their limitations written down." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23d8f25a'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='600' text-anchor='middle' fill='%230e0f0c'%3Ets%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -59,15 +67,15 @@ nav.links a:hover{color:var(--paper)}
 .burger span{display:block;width:15px;height:1.5px;margin:3px auto;background:var(--paper)}
 
 /* ---------- hero ---------- */
-.hero{padding-top:clamp(3.5rem,8vw,7rem);padding-bottom:clamp(3.5rem,7vw,6rem)}
+.hero{padding-top:clamp(3rem,6vw,5.2rem);padding-bottom:clamp(3rem,5.5vw,4.6rem)}
 .status{display:inline-flex;align-items:center;gap:9px;padding:7px 13px 7px 11px;border:1px solid var(--line-2);border-radius:999px;
   color:var(--grey-1);font:400 11.5px/1 'DM Mono';margin-bottom:26px}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(216,242,90,.12)}
-h1{font-size:clamp(2.9rem,6.6vw,6.4rem);line-height:1.06}
+h1{font-size:clamp(1.5rem,6.4vw,3.35rem);line-height:1.14;letter-spacing:-.045em}
 h1 .dim{color:#61655c}
 .warp{display:block;cursor:crosshair}
 .warp-line{display:block;white-space:pre}
-.warp .ch{display:inline-block;transform-origin:50% 85%;will-change:transform}
+.warp .ch{display:inline-block;transform-origin:50% 85%;backface-visibility:hidden}
 .lede{max-width:var(--measure);margin-top:26px;color:var(--grey-1);font-size:clamp(1rem,1.25vw,1.09rem);line-height:1.72}
 .lede b{color:var(--paper);font-weight:600}
 .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:34px}
@@ -77,6 +85,24 @@ h1 .dim{color:#61655c}
 .btn-ghost{border:1px solid var(--line-2);color:var(--paper)}
 .btn-ghost:hover{border-color:var(--lime);background:rgba(216,242,90,.06)}
 .btn:active{transform:scale(.975)}
+
+/* ---------- page rail ---------- */
+.page-rail{position:fixed;top:50%;left:40px;z-index:30;display:none;flex-direction:column;gap:1px;width:150px;
+  transform:translateY(-50%)}
+.page-rail p{margin:0 0 14px 2px;color:var(--grey-3);font:400 10px/1 'DM Mono';letter-spacing:.14em;text-transform:uppercase}
+.page-rail a{display:flex;align-items:center;gap:11px;padding:8px 10px 8px 2px;border-radius:7px;color:var(--grey-2);
+  font:400 12px/1 'DM Mono';transition:color .16s ease,background .16s ease}
+.page-rail a i{display:grid;place-items:center;width:19px;height:17px;border-radius:4px;background:#23261e;color:var(--grey-2);
+  font:400 9.5px/1 'DM Mono';font-style:normal;transition:background .16s ease,color .16s ease}
+.page-rail a:hover{color:var(--paper);background:rgba(242,241,235,.04)}
+.page-rail a.active{color:var(--paper)}
+.page-rail a.active i{background:var(--lime);color:var(--ink)}
+@media (min-width:1180px){
+  body{padding-left:190px}
+  .page-rail{display:flex}
+  header.bar::before{content:'';position:absolute;top:0;bottom:-1px;right:100%;width:190px;
+    background:rgba(14,15,12,.86);border-bottom:1px solid var(--line)}
+}
 
 /* ---------- stats strip ---------- */
 .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -206,7 +232,6 @@ footer a:hover{color:var(--paper)}
   .stat:nth-child(odd){border-left:0;padding-left:0}
 }
 @media (max-width:520px){
-  h1{font-size:2.55rem}
   .sec-head{margin-bottom:26px}
 }
 @media (prefers-reduced-motion:reduce){
@@ -216,6 +241,15 @@ footer a:hover{color:var(--paper)}
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
+
+<nav class="page-rail" id="rail" aria-label="On this page">
+  <p>On this page</p>
+  <a href="#work"><i>01</i>Work</a>
+  <a href="#stack"><i>02</i>Stack</a>
+  <a href="#research"><i>03</i>Research</a>
+  <a href="#background"><i>04</i>Background</a>
+  <a href="#contact"><i>05</i>Contact</a>
+</nav>
 
 <header class="bar">
   <div class="wrap bar-in">
@@ -239,10 +273,10 @@ footer a:hover{color:var(--paper)}
   <div class="reveal">
     <span class="status"><span class="dot"></span> Open to SDE and AI/ML roles · joining 2027</span>
     <h1 class="warp" id="warp" aria-label="I build backends that hold up when everyone shows up at once.">
-      <span class="warp-line" data-text="I build backends" aria-hidden="true"></span>
-      <span class="warp-line" data-text="that hold up when" aria-hidden="true"></span>
-      <span class="warp-line dim" data-text="everyone shows up" aria-hidden="true"></span>
-      <span class="warp-line dim" data-text="at once." aria-hidden="true"></span>
+      <span class="warp-line" aria-hidden="true">I build backends</span>
+      <span class="warp-line" aria-hidden="true">that hold up when</span>
+      <span class="warp-line dim" aria-hidden="true">everyone shows up</span>
+      <span class="warp-line dim" aria-hidden="true">at once.</span>
     </h1>
     <p class="lede">M.Tech at IIIT Allahabad. I work mostly in Node.js and Postgres on the parts of a system that are easy to get subtly wrong — <b>locking, idempotency, cache invalidation, message delivery</b> — and in applied ML on the part everyone skips: <b>checking whether the accuracy is real.</b></p>
     <div class="cta-row">
@@ -811,8 +845,9 @@ footer a:hover{color:var(--paper)}
 
   root.querySelectorAll('.warp-line').forEach(line => {
     const base = line.classList.contains('dim') ? [97, 101, 92] : [242, 241, 235];
+    const text = line.textContent.trim();
     line.textContent = '';
-    [...line.dataset.text].forEach(c => {
+    [...text].forEach(c => {
       const s = document.createElement('span');
       s.className = 'ch';
       s.textContent = c;
@@ -831,6 +866,7 @@ footer a:hover{color:var(--paper)}
       const r = c.el.getBoundingClientRect();
       c.cx = r.left + r.width / 2;
       c.cy = r.top + r.height / 2;
+      c.h = r.height || 40;
     });
   }
   measure();
@@ -841,17 +877,17 @@ footer a:hover{color:var(--paper)}
   addEventListener('pointermove', e => { mx = e.clientX; my = e.clientY; }, { passive: true });
   root.addEventListener('pointerleave', () => { mx = my = -9999; });
 
-  const R = 170;
+  const R = 120;
   function frame() {
     t += 0.014;
     chars.forEach((c, i) => {
       const dx = c.cx - mx, dy = c.cy - my;
       const d = Math.sqrt(dx * dx + dy * dy);
       const k = d < R ? Math.pow(1 - d / R, 1.6) : 0;
-      const wave = Math.sin(t + i * 0.26) * 2.4;
-      const y = wave - k * 16;
-      const x = k * (dx / (d || 1)) * 7;
-      c.el.style.transform = `translate3d(${x.toFixed(2)}px,${y.toFixed(2)}px,0) scale(${(1 + k * 0.13).toFixed(3)})`;
+      const wave = Math.sin(t + i * 0.26) * c.h * 0.035;
+      const y = wave - k * c.h * 0.2;
+      const x = k * (dx / (d || 1)) * c.h * 0.09;
+      c.el.style.transform = `translate3d(${x.toFixed(2)}px,${y.toFixed(2)}px,0) scale(${(1 + k * 0.1).toFixed(3)})`;
       const m = k * 0.92;
       c.el.style.color = `rgb(${Math.round(c.base[0] + (LIME[0] - c.base[0]) * m)},${Math.round(c.base[1] + (LIME[1] - c.base[1]) * m)},${Math.round(c.base[2] + (LIME[2] - c.base[2]) * m)})`;
     });
@@ -871,6 +907,36 @@ menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   menu.classList.remove('open');
   burger.setAttribute('aria-expanded', 'false');
 }));
+
+// in-page nav: scroll directly instead of relying on hash navigation,
+// which sandboxed iframes intercept as an external link
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.getElementById(a.getAttribute('href').slice(1));
+    if (!target) return;
+    e.preventDefault();
+    const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    target.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+  });
+});
+
+// page rail active state
+(function () {
+  const links = [...document.querySelectorAll('.page-rail a')];
+  if (!links.length) return;
+  const targets = links.map(a => document.getElementById(a.getAttribute('href').slice(1)));
+  let ticking = false;
+  function sync() {
+    ticking = false;
+    let current = -1;
+    targets.forEach((t, i) => { if (t && t.getBoundingClientRect().top <= 160) current = i; });
+    links.forEach((a, i) => a.classList.toggle('active', i === current));
+  }
+  addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(sync); }
+  }, { passive: true });
+  sync();
+})();
 
 // project filters
 const filters = document.querySelectorAll('.filter');
